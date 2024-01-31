@@ -1,0 +1,4 @@
+bsds/__pycache__/
+bsds/correspond_pixels.cpp
+bsds/correspond_pixels.cpython-312-x86_64-linux-gnu.so
+build/

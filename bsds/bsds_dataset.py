@@ -2,7 +2,7 @@ import os
 import numpy as np
 from PIL import Image
 from skimage.util import img_as_float
-from skimage.color import rgb2grey
+from skimage.color import rgb2gray
 from skimage.io import imread
 from scipy.io import loadmat
 
@@ -180,7 +180,11 @@ class BSDSHEDAugDataset (object):
         '1_0', '1_1'
     ]
 
-    ALL_AUGS = [(s, r, f) for f in AUG_FLIPS for r in AUG_ROTS for s in AUG_SCALES]
+    ALL_AUGS = []
+    for f in AUG_FLIPS:
+        for r in AUG_ROTS:
+            for s in AUG_SCALES:
+                ALL_AUGS.append((s, r, f))
 
     def __init__(self, bsds_dataset, root_path):
         """
